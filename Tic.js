@@ -1,6 +1,6 @@
 const statusDisplay = document.querySelector('.game--status');
-var box = document.querySelectorAll('.box-0');
-console.log(box);
+// var box = document.querySelectorAll('.box-0');
+// console.log(box);
 let count = 0;
 let gameActive = true;
 let tick_X = "X";
@@ -100,23 +100,24 @@ function handleResultValidation() {
 }
 
 function handleCellClick(clickedCellEvent) {
-var box =   document.querySelector('.box-0').innerHTML;
-console.log(box==="X");
-console.log(box==="");
-console.log(box==="O");
+// var box =   document.querySelector('.box-0').innerHTML;
+// console.log(box==="X");
+// console.log(box==="");
+// console.log(box==="O");
     var clickedCell = clickedCellEvent.target;
     var clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
     
-    if(box===""){
-      handleCellPlayed(document.querySelector('.box-0'), clickedCellIndex);
-      console.log(document.querySelector('.box-0'));
-      handlePlayerChange();
-      // handleResultValidation();
-      return;
-    }
+    // if(box===""){
+    //   handleCellPlayed(document.querySelector('.box-0'), clickedCellIndex);
+    //   console.log(document.querySelector('.box-0'));
+    //   handlePlayerChange();
+    //   // handleResultValidation();
+    //   return;
+    // }
     if (gameState[clickedCellIndex] !== "" || !gameActive) {
         return;
     }
+    handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
 }
 
